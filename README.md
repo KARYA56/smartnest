@@ -1,0 +1,512 @@
+import React from "react";
+
+export default function SmartNestUI() {
+  const [activePanel, setActivePanel] = React.useState(null);
+  const students = [
+    {
+      name: "Ahmet Yılmaz",
+      progress: "+12%",
+      points: 840,
+      status: "Yükselişte",
+    },
+    {
+      name: "Mehmet Kaya",
+      progress: "-4%",
+      points: 620,
+      status: "Dikkat Gerekli",
+    },
+    {
+      name: "Yusuf Demir",
+      progress: "+7%",
+      points: 910,
+      status: "Stabil",
+    },
+  ];
+
+  return (
+    <div className="min-h-screen bg-[#0F172A] text-white font-sans">
+      {/* HEADER */}
+      <header className="sticky top-0 z-50 backdrop-blur border-b border-white/10 bg-[#0F172A]/80">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div>
+            <h1 className="text-2xl font-bold tracking-wide text-sky-400">
+              SmartNest
+            </h1>
+          </div>
+
+          <nav className="hidden md:flex items-center gap-8 text-sm text-slate-300">
+            <a href="#" className="hover:text-white transition">
+              Ana Sayfa
+            </a>
+            <a href="#" className="hover:text-white transition">
+              Sistem
+            </a>
+            <a href="#" className="hover:text-white transition">
+              Özellikler
+            </a>
+          </nav>
+
+          <div className="flex gap-3">
+            <button
+              onClick={() => setActivePanel("student")}
+              className="px-4 py-2 rounded-xl border border-slate-600 hover:border-sky-400 transition text-sm"
+            >
+              Talebe Girişi
+            </button>
+
+            <button
+              onClick={() => setActivePanel("teacher")}
+              className="px-4 py-2 rounded-xl bg-sky-500 hover:bg-sky-400 transition text-sm font-medium"
+            >
+              Hoca Girişi
+            </button>
+          </div>
+        </div>
+      </header>
+
+      {}
+      <section className="relative overflow-hidden max-w-7xl mx-auto px-6 py-24 grid lg:grid-cols-2 gap-16 items-center">
+        <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_top,_#38BDF8,_transparent_40%)]"></div>
+        <div>
+          <p className="text-sky-400 mb-4 text-sm uppercase tracking-[0.3em]">
+            Yeni Nesil Eğitim Sistemi
+          </p>
+
+          <h2 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
+            Geleceğin
+            <span className="text-sky-400"> Akıllı </span>
+            Kampüs Platformu
+          </h2>
+
+          <p className="text-slate-400 text-lg leading-relaxed max-w-xl mb-8">
+            Talebe gelişimini analiz eden, hocalara güçlü yönetim
+            araçları sunan sade ve modern eğitim ekosistemi.
+          </p>
+
+          <div className="bg-white/5 border border-white/10 rounded-2xl px-5 py-4 max-w-xl mb-8 backdrop-blur-sm">
+            <p className="text-slate-300 italic leading-relaxed text-sm md:text-base">
+              “İlim, insanın kendini tanımasıyla başlar. Gelişim ise her gün
+              bir adım daha ileri gitmektir.”
+            </p>
+          </div>
+
+          <div className="flex gap-4">
+            <button className="px-6 py-3 rounded-2xl bg-sky-500 hover:bg-sky-400 transition font-medium">
+              Sistemi İncele
+            </button>
+
+            <button className="px-6 py-3 rounded-2xl border border-slate-600 hover:border-slate-400 transition">
+              Dashboard
+            </button>
+          </div>
+
+          <div className="grid grid-cols-3 gap-4 mt-12">
+            <div className="bg-[#1E293B] rounded-2xl p-4 border border-white/5">
+              <h3 className="text-2xl font-bold text-sky-400">%40</h3>
+              <p className="text-sm text-slate-400 mt-1">Daha Verimli Takip</p>
+            </div>
+
+            <div className="bg-[#1E293B] rounded-2xl p-4 border border-white/5">
+              <h3 className="text-2xl font-bold text-sky-400">24/7</h3>
+              <p className="text-sm text-slate-400 mt-1">Canlı Analiz</p>
+            </div>
+
+            <div className="bg-[#1E293B] rounded-2xl p-4 border border-white/5">
+              <h3 className="text-2xl font-bold text-sky-400">AI</h3>
+              <p className="text-sm text-slate-400 mt-1">Destekli Sistem</p>
+            </div>
+          </div>
+        </div>
+
+        {}
+        <div className="bg-[#111827] border border-white/10 rounded-3xl p-6 shadow-2xl">
+          <div className="flex items-center justify-between mb-6">
+            <div>
+              <h3 className="text-xl font-semibold">Talebe Paneli</h3>
+              <p className="text-slate-400 text-sm mt-1">
+                Haftalık performans analizi
+              </p>
+            </div>
+
+            <div className="bg-sky-500/10 text-sky-400 px-4 py-2 rounded-xl text-sm border border-sky-500/20">
+              840 EcoPoint
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-4">
+            <div className="bg-[#1E293B] rounded-2xl p-5 border border-white/5">
+              <div className="flex items-center justify-between mb-4">
+                <h4 className="font-medium">Haftalık Kritik</h4>
+                <span className="text-green-400 text-sm">+12%</span>
+              </div>
+
+              <div className="space-y-3">
+                <div>
+                  <div className="flex justify-between text-sm mb-1">
+                    <span>Matematik</span>
+                    <span className="text-green-400">Yükseliş</span>
+                  </div>
+                  <div className="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                    <div className="bg-green-400 h-2 w-[80%] rounded-full"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex justify-between text-sm mb-1">
+                    <span>Fizik</span>
+                    <span className="text-red-400">Düşüş</span>
+                  </div>
+                  <div className="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                    <div className="bg-red-400 h-2 w-[40%] rounded-full"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div className="flex justify-between text-sm mb-1">
+                    <span>Arapça</span>
+                    <span className="text-sky-400">Stabil</span>
+                  </div>
+                  <div className="w-full bg-slate-700 h-2 rounded-full overflow-hidden">
+                    <div className="bg-sky-400 h-2 w-[70%] rounded-full"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-[#1E293B] rounded-2xl p-5 border border-white/5">
+              <h4 className="font-medium mb-4">Bugünkü Program</h4>
+
+              <div className="space-y-3 text-sm">
+                <div className="flex justify-between bg-slate-800/60 rounded-xl px-4 py-3">
+                  <span>Tefsir</span>
+                  <span className="text-slate-400">09:00</span>
+                </div>
+
+                <div className="flex justify-between bg-slate-800/60 rounded-xl px-4 py-3">
+                  <span>Arapça</span>
+                  <span className="text-slate-400">11:00</span>
+                </div>
+
+                <div className="flex justify-between bg-slate-800/60 rounded-xl px-4 py-3">
+                  <span>Matematik</span>
+                  <span className="text-slate-400">14:00</span>
+                </div>
+              </div>
+
+              <div className="mt-6 bg-sky-500/10 border border-sky-500/20 rounded-2xl p-4 text-sm text-slate-300">
+                Bu hafta matematik performansında yükseliş gözlemlendi.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {{activePanel === "student" && (
+        <section className="max-w-7xl mx-auto px-6 py-10 transition-all duration-500">
+          <div className="text-center mb-14">
+            <p className="text-sky-400 uppercase tracking-[0.25em] text-sm mb-4">
+              Talebe Paneli
+            </p>
+            <h2 className="text-4xl font-bold mb-4">
+              Kişisel Gelişim ve Ders Takibi
+            </h2>
+            <p className="text-slate-400 max-w-2xl mx-auto">
+              Talebe performansı, haftalık kritikler ve EcoPoint sistemi.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-6">
+            <div className="bg-[#1E293B] rounded-3xl p-6 border border-white/5">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-full bg-sky-500/20 border border-sky-500/30"></div>
+                <div>
+                  <h3 className="text-xl font-semibold">Muhammed Ali</h3>
+                  <p className="text-slate-400 text-sm">Talebe Profili</p>
+                </div>
+              </div>
+
+              <div className="space-y-4 text-sm text-slate-300">
+                <div className="flex justify-between">
+                  <span>Genel Başarı</span>
+                  <span className="text-green-400">%84</span>
+                </div>
+
+                <div className="flex justify-between">
+                  <span>Devamlılık</span>
+                  <span className="text-sky-400">%96</span>
+                </div>
+
+                <div className="flex justify-between">
+                  <span>EcoPoint</span>
+                  <span className="text-yellow-400">840</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-[#1E293B] rounded-3xl p-6 border border-white/5 lg:col-span-2">
+              <h3 className="text-xl font-semibold mb-6">
+                Haftalık Ders Kritiği
+              </h3>
+
+              <div className="grid md:grid-cols-2 gap-5">
+                <div className="bg-slate-800/60 rounded-2xl p-5 border border-white/5">
+                  <div className="flex items-center justify-between mb-3">
+                    <h4 className="font-medium">Yükseliş Gösteren Dersler</h4>
+                    <span className="text-green-400 text-sm">+8%</span>
+                  </div>
+
+                  <ul className="space-y-3 text-slate-300 text-sm">
+                    <li>• Matematik performansında artış</li>
+                    <li>• Arapça tekrarlarında gelişim</li>
+                    <li>• Haftalık görevler tamamlandı</li>
+                  </ul>
+                </div>
+
+                <div className="bg-slate-800/60 rounded-2xl p-5 border border-white/5">
+                  <div className="flex items-center justify-between mb-3">
+                    <h4 className="font-medium">Dikkat Gereken Alanlar</h4>
+                    <span className="text-red-400 text-sm">-3%</span>
+                  </div>
+
+                  <ul className="space-y-3 text-slate-300 text-sm">
+                    <li>• Fizik tekrarları eksik</li>
+                    <li>• Ezber saatlerinde düşüş var</li>
+                    <li>• Haftalık hedef tamamlanmadı</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {activePanel === "teacher" && (
+        <section className="max-w-7xl mx-auto px-6 py-10 transition-all duration-500">
+          <div className="flex items-center justify-between mb-10 flex-wrap gap-4">
+            <div>
+              <p className="text-sky-400 uppercase tracking-[0.25em] text-sm mb-3">
+                Hoca Paneli
+              </p>
+              <h2 className="text-4xl font-bold">
+                Talebe Yönetim Sistemi
+              </h2>
+            </div>
+
+            <button className="px-5 py-3 rounded-2xl bg-sky-500 hover:bg-sky-400 transition">
+              Talebe Ekle
+            </button>
+          </div>
+
+          <div className="bg-[#111827] rounded-3xl border border-white/10 overflow-hidden">
+            <div className="grid grid-cols-4 px-6 py-4 border-b border-white/10 text-slate-400 text-sm font-medium">
+              <span>Talebe</span>
+              <span>Performans</span>
+              <span>EcoPoint</span>
+              <span>Durum</span>
+            </div>
+
+            {students.map((student, index) => (
+              <div
+                key={index}
+                className="grid grid-cols-4 px-6 py-5 border-b border-white/5 items-center hover:bg-white/5 transition"
+              >
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-sky-500/20 border border-sky-500/30"></div>
+                  <span>{student.name}</span>
+                </div>
+
+                <span
+                  className={`font-medium ${
+                    student.progress.includes("+")
+                      ? "text-green-400"
+                      : "text-red-400"
+                  }`}
+                >
+                  {student.progress}
+                </span>
+
+                <span>{student.points}</span>
+
+                <div>
+                  <span className="px-3 py-1 rounded-full bg-slate-800 text-sm text-slate-300 border border-white/5">
+                    {student.status}
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+      {/* TALEBE DETAYLARI */}
+      <section className="max-w-7xl mx-auto px-6 py-10">
+        <div className="text-center mb-14">
+          <p className="text-sky-400 uppercase tracking-[0.25em] text-sm mb-4">
+            Talebe Profili
+          </p>
+          <h2 className="text-4xl font-bold mb-4">
+            Gelişim Takip Sistemi
+          </h2>
+          <p className="text-slate-400 max-w-2xl mx-auto">
+            Talebeler kendi performanslarını, haftalık ders analizlerini,
+            görevlerini ve EcoPoint gelişimlerini tek panelden takip eder.
+          </p>
+        </div>
+
+        <div className="grid lg:grid-cols-3 gap-6">
+          <div className="bg-[#1E293B] rounded-3xl p-6 border border-white/5">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="w-16 h-16 rounded-full bg-sky-500/20 border border-sky-500/30"></div>
+              <div>
+                <h3 className="text-xl font-semibold">Muhammed Ali</h3>
+                <p className="text-slate-400 text-sm">Talebe Profili</p>
+              </div>
+            </div>
+
+            <div className="space-y-4 text-sm text-slate-300">
+              <div className="flex justify-between">
+                <span>Genel Başarı</span>
+                <span className="text-green-400">%84</span>
+              </div>
+
+              <div className="flex justify-between">
+                <span>Devamlılık</span>
+                <span className="text-sky-400">%96</span>
+              </div>
+
+              <div className="flex justify-between">
+                <span>EcoPoint</span>
+                <span className="text-yellow-400">840</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-[#1E293B] rounded-3xl p-6 border border-white/5 lg:col-span-2">
+            <h3 className="text-xl font-semibold mb-6">
+              Haftalık Ders Kritiği
+            </h3>
+
+            <div className="grid md:grid-cols-2 gap-5">
+              <div className="bg-slate-800/60 rounded-2xl p-5 border border-white/5">
+                <div className="flex items-center justify-between mb-3">
+                  <h4 className="font-medium">Yükseliş Gösteren Dersler</h4>
+                  <span className="text-green-400 text-sm">+8%</span>
+                </div>
+
+                <ul className="space-y-3 text-slate-300 text-sm">
+                  <li>• Matematik performansında artış</li>
+                  <li>• Arapça tekrarlarında gelişim</li>
+                  <li>• Haftalık görevler tamamlandı</li>
+                </ul>
+              </div>
+
+              <div className="bg-slate-800/60 rounded-2xl p-5 border border-white/5">
+                <div className="flex items-center justify-between mb-3">
+                  <h4 className="font-medium">Dikkat Gereken Alanlar</h4>
+                  <span className="text-red-400 text-sm">-3%</span>
+                </div>
+
+                <ul className="space-y-3 text-slate-300 text-sm">
+                  <li>• Fizik tekrarları eksik</li>
+                  <li>• Ezber saatlerinde düşüş var</li>
+                  <li>• Haftalık hedef tamamlanmadı</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      {}}
+      <section className="max-w-7xl mx-auto px-6 py-10">
+        <div className="text-center mb-14">
+          <p className="text-sky-400 uppercase tracking-[0.25em] text-sm mb-4">
+            Özellikler
+          </p>
+          <h2 className="text-4xl font-bold">
+            Sade ama güçlü bir sistem
+          </h2>
+        </div>
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {[
+            {
+              title: "AI Mentor",
+              text: "Talebe gelişimini analiz eden akıllı destek sistemi.",
+            },
+            {
+              title: "Akıllı Takip",
+              text: "Haftalık ders performansı ve analiz ekranları.",
+            },
+            {
+              title: "EcoPoint",
+              text: "Görev ve başarı bazlı puan sistemi.",
+            },
+            {
+              title: "Hoca Paneli",
+              text: "Talebe yönetimi ve ders program düzenleme.",
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="bg-[#1E293B] rounded-3xl p-6 border border-white/5 hover:border-sky-500/30 transition duration-300 hover:-translate-y-1"
+            >
+              <div className="w-12 h-12 rounded-2xl bg-sky-500/10 border border-sky-500/20 mb-5"></div>
+              <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
+              <p className="text-slate-400 leading-relaxed text-sm">
+                {item.text}
+              </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {}
+      <section className="max-w-7xl mx-auto px-6 py-24">
+        <div className="flex items-center justify-between mb-10 flex-wrap gap-4">
+          <div>
+            <p className="text-sky-400 uppercase tracking-[0.25em] text-sm mb-3">
+              Hoca Paneli
+            </p>
+            <h2 className="text-4xl font-bold">
+              Talebe Yönetim Sistemi
+            </h2>
+          </div>
+
+          <button className="px-5 py-3 rounded-2xl bg-sky-500 hover:bg-sky-400 transition">
+            Talebe Ekle
+          </button>
+        </div>
+
+        <div className="bg-[#111827] rounded-3xl border border-white/10 overflow-hidden">
+          <div className="grid grid-cols-4 px-6 py-4 border-b border-white/10 text-slate-400 text-sm font-medium">
+            <span>Talebe</span>
+            <span>Performans</span>
+            <span>EcoPoint</span>
+            <span>Durum</span>
+          </div>
+
+          {students.map((student, index) => (
+            <div
+              key={index}
+              className="grid grid-cols-4 px-6 py-5 border-b border-white/5 items-center hover:bg-white/5 transition"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-sky-500/20 border border-sky-500/30"></div>
+                <span>{student.name}</span>
+              </div>
+
+              <span
+                className={`font-medium ${
+                  student.progress.includes("+")
+                    ? "text-green-400"
+                    : "text-red-400"
+                }`}
+              >
+                {student.progress}
+              </span>
+
+              <span>{student.points}</span>
+
+              <div>
+                <span className="px-3 py-1 rounded-full bg-slate-800 text-sm text-slate-300 border border-white/5">
+                  {student.status}
+  
